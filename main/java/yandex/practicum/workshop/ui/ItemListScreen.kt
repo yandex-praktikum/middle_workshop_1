@@ -26,10 +26,15 @@ fun ItemListScreen(viewModel: ItemListViewModel) {
         when (val currentState = state) {
             is State.Data -> items(currentState.items) { item -> Item(item = item) }
             is State.Loading -> item {
-                Box(modifier = Modifier.fillMaxSize()) {
-                    CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-                }
+                Loading()
             }
         }
+    }
+}
+
+@Composable
+private fun Loading() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
     }
 }
