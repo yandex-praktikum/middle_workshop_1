@@ -6,9 +6,5 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class GetItemsUseCase @Inject constructor(private val repository: ItemRepository) {
-    operator fun invoke(): Flow<List<Item>> = repository.getItems()
-}
-
-class UpdateItemUseCase @Inject constructor(private val repository: ItemRepository) {
-    operator fun invoke(item: Item) = repository.updateItem(item)
+    operator fun invoke(page: Int, perPage: Int): Flow<List<Item>> = repository.getItems(page, perPage)
 }
