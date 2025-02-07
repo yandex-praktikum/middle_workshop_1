@@ -71,7 +71,7 @@ private fun NoMoreItems() {
     Box(modifier = Modifier.fillMaxWidth()) {
         Text(
             modifier = Modifier.align(Alignment.Center),
-            text = "No more items",
+            text = "Больше нету",
             fontStyle = FontStyle.Italic
         )
     }
