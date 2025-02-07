@@ -12,7 +12,7 @@ import yandex.practicum.workshop.domain.GetItemsUseCase
 import javax.inject.Inject
 
 enum class PaginationState {
-    IDLE, LOADING_FIRST, LOADING_PAGE
+    IDLE, LOADING, LOADING_PAGE
 }
 
 @HiltViewModel
@@ -33,7 +33,7 @@ class ItemListViewModel @Inject constructor(
     fun loadItems() {
         viewModelScope.launch {
             _paginationState.value =
-                if (pageToLoad == 0) PaginationState.LOADING_FIRST else PaginationState.LOADING_PAGE
+                if (pageToLoad == 0) PaginationState.LOADING else PaginationState.LOADING_PAGE
 
             getItemsUseCase(pageToLoad, PER_PAGE).collect(::processNewItems)
         }

@@ -26,7 +26,7 @@ private const val PAGINATE_OFFSET = 4
 @Composable
 fun ItemListScreen(viewModel: ItemListViewModel) {
     val paginationState by viewModel.paginationState.collectAsState()
-    if (paginationState == PaginationState.LOADING_FIRST) {
+    if (paginationState == PaginationState.LOADING) {
         Loading()
         return
     }

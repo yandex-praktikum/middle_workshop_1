@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ItemListScreen(viewModel: ItemListViewModel) {
     val paginationState by viewModel.paginationState.collectAsState()
-    if (paginationState == PaginationState.LOADING_FIRST) {
+    if (paginationState == PaginationState.LOADING) {
         Loading()
         return
     }
