@@ -37,7 +37,7 @@ class ItemListViewModel @Inject constructor(
     }
 
     private fun processNewItems(newItems: List<Item>) {
-        _items.update { it + newItems }
+        _items.value = newItems
         _paginationState.value = PaginationState.IDLE
     }
 }
