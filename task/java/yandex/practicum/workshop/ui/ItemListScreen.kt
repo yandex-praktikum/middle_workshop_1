@@ -58,10 +58,6 @@ fun ItemListScreen(viewModel: ItemListViewModel) {
             item {
                 Loading()
             }
-        } else if (paginationState == PaginationState.NO_MORE) {
-            item {
-                NoMoreItems()
-            }
         }
     }
 }
