@@ -63,6 +63,13 @@ fun ItemListScreen(viewModel: ItemListViewModel) {
 }
 
 @Composable
+private fun Loading() {
+    Box(modifier = Modifier.fillMaxSize()) {
+        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+    }
+}
+
+@Composable
 private fun NoMoreItems() {
     Box(modifier = Modifier.fillMaxWidth()) {
         Text(
@@ -70,12 +77,5 @@ private fun NoMoreItems() {
             text = "No more items",
             fontStyle = FontStyle.Italic
         )
-    }
-}
-
-@Composable
-private fun Loading() {
-    Box(modifier = Modifier.fillMaxSize()) {
-        CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
     }
 }
