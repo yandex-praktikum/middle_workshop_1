@@ -14,7 +14,5 @@ abstract class RepoModule {
 
     @Binds
     @ViewModelScoped
-    abstract fun bindRepository(
-        repositoryImpl: ItemRepositoryImpl
-    ): ItemRepository
+    abstract fun bindRepository(repositoryImpl: ItemRepositoryImpl): ItemRepository
 }
