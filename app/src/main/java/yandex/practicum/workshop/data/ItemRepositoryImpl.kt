@@ -6,13 +6,15 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
-import kotlin.math.min
+
+private const val ITEMS_COUNT = 43
 
 class ItemRepositoryImpl @Inject constructor() : ItemRepository {
-    private val _items = List(43) { Item(id = it, name = "Item $it") }
+    private var startItemId = 0
 
-    override fun getItems(page: Int, perPage: Int): Flow<List<Item>> = flow {
-        delay(100L * min(perPage, _items.size))
-        emit(_items.subList(page * perPage, min((page + 1) * perPage, _items.size)))
+    override fun getItems(): Flow<List<Item>> = flow {
+        delay(2000L)
+        emit(List(ITEMS_COUNT) { Item(id = it, name = "Item ${startItemId + it}") })
+        startItemId += ITEMS_COUNT
     }.flowOn(Dispatchers.IO)
 }
