@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "yandex.practicum.workshop.pagination"
+    namespace = "yandex.practicum.workshop.compose"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "yandex.practicum.workshop.pagination"
+        applicationId = "yandex.practicum.workshop.compose"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
